@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ExplainBack · Learning Lab 001</title>
+<link rel="stylesheet" href="style.css">
+<header class="top"><strong>LEARNING LAB / 001</strong><nav><a href="index.html#roadmap">Back to the roadmap</a></nav></header>
+<main>
+<section class="hero"><div><p class="eyebrow">THE WORKING PROTOTYPE</p><h1>ExplainBack</h1><p class="intro">Pick an idea, explain it from memory, then see if you can apply it. Save the record and return to it later.</p></div></section>
+<article>
+<form id="session">
+<div class="notes">
+<label>Concept<input name="concept" type="text" required placeholder="e.g. Retrieval practice"></label>
+<label>My explanation<textarea name="explanation" required></textarea></label>
+</div>
+<button id="recallButton" type="button">Reveal recall questions</button>
+<div id="recallBlock" hidden>
+<div class="notes">
+<label>What is a concrete example?<textarea name="example" disabled required></textarea></label>
+<label>When would this idea fail or be misapplied?<textarea name="limits" disabled required></textarea></label>
+</div>
+<button type="submit">Save session</button>
+</div>
+</form>
+<p id="message" role="status"></p>
+<hr>
+<h2>Saved sessions</h2><div id="sessions"></div>
+<p class="small">Sessions stay in this browser. Export a copy to keep it elsewhere.</p>
+</article>
+</main><footer>Learning Lab 001 · Aqsa Umar</footer>
+<script src="explainback.js"></script>
+</html>
