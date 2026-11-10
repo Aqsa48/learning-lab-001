@@ -216,14 +216,14 @@ $("export").onclick = () => {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 };
 const matrix = document.createElement("table");
-matrix.innerHTML = "<thead><tr><th scope='col'>Topic</th><th scope='col'>Outlines</th></tr></thead><tbody></tbody>";
+matrix.innerHTML = "<thead><tr><th scope='col'>Topic</th><th scope='col'>Course outlines mentioning this topic</th></tr></thead><tbody></tbody>";
 themes.forEach(([topic, keys]) => {
   const row = matrix.tBodies[0].insertRow();
   row.insertCell().textContent = topic;
   const cell = row.insertCell();
   const detail = document.createElement("details");
   const summary = document.createElement("summary");
-  summary.textContent = keys.length + " / 6";
+  summary.textContent = keys.length + " of 6 courses";
   detail.append(summary, keys.map(k => sources[k][0].split(" · ")[0]).join(", "));
   cell.append(detail);
 });
