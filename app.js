@@ -17,6 +17,36 @@ const sources = {
   pages: ["GitHub Docs · GitHub Pages quickstart", "https://docs.github.com/en/pages/quickstart"],
   mdn: ["MDN · Web Storage API", "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API"]
 };
+const freeStudy = [
+  ["retrieval","Start with the video or poster. Then close it and try the recall exercise."],
+  ["hfagents","Read What are Tools?, Messages and Special Tokens, and the Thought–Action–Observation Cycle."],
+  ["react","Read Responding to events and Updating the screen. Then try saving one form value."],
+  ["retrieval","Use the bookmark prompts to prepare the retest. Review them after you finish answering."],
+  ["pages","Use the branch deployment steps when your draft and demo are ready."],
+  ["mdn","Read the localStorage section. Save, reload and inspect a fictional entry."],
+  ["retrieval","Use the prompt examples to write questions that require recall or a new example."],
+  ["cs50","Use the lecture or notes. Focus on language models, prompting and hallucinations."],
+  ["hfllm","Open Inference with LLMs and Bias and limitations from the chapter menu."],
+  ["ollama","Follow the local setup. Choose a local model to avoid cloud usage charges."],
+  ["cs50","Read the prompt engineering notes and change one instruction at a time."],
+  ["structured","Read Generating structured JSON. Use the sample or write your own valid and invalid fixtures."],
+  ["ollama","Use local chat, or write a sample feedback response by hand to test your review flow."],
+  ["mdn","Use the storage examples to check what happens in a fresh browser profile."],
+  ["embeddings","Read the introduction and CLI example. The worksheet vectors work without a download."],
+  ["bootcamp","Open Augmented Language Models and focus on retrieval before generation."],
+  ["bootcamp","Open Augmented Language Models and identify where retrieved context enters the prompt."],
+  ["hfagents","Read the Thought–Action–Observation lesson and trace two examples on paper."],
+  ["tools","Start with Calling a single tool. Use a sample tool-call object if your model lacks tool support."],
+  ["hfagents","Read the Actions and Observe lessons. Replay a two-step example with mocked responses."],
+  ["bootcamp","Open the Agents lecture. Compare tool use with a single model response on the same inputs."],
+  ["bootcamp","Open LLMOps and focus on testing. Build your ten cases before changing the prototype."],
+  ["hfllm","Read Bias and limitations. Map which parts of your own app handle personal data."],
+  ["pages","Follow the branch publishing quickstart for the manual static demo."],
+  ["retrieval","Return to the original reading and check how you describe recall in your draft."],
+  ["bootcamp","Open Project Walkthrough: askFSDL. Use it to study how a workflow can be shown step by step."],
+  ["retrieval","Check the wording of your learning claims against the source and your own scores."],
+  ["pages","Use the published URL shown under Settings → Pages and test it before sharing."]
+];
 const themes = [
   ["Agent workflows and tool use", ["harvard","mit","coursera","ibm","hfagents","bootcamp"]],
   ["Hands-on exercises or projects", ["harvard","mit","coursera","ibm","hfagents","bootcamp"]],
@@ -77,11 +107,23 @@ function update() {
 }
 function show(i, focus = true) {
   current = i;
-  const [title, source, concept, task, proof, recall, shot] = lessons[i];
+  const [title, , concept, task, proof, recall, shot] = lessons[i];
   $("dayLabel").textContent = "WEEK " + (Math.floor(i / 7) + 1) + " / DAY " + label(i);
   $("dayTitle").textContent = title;
   $("concept").textContent = concept;
-  [$("reading").textContent, $("reading").href] = sources[source];
+  const [freeSource, studyTip] = freeStudy[i];
+  const [sourceTitle, sourceUrl] = sources[freeSource];
+  const reading = $("reading");
+  reading.textContent = "Free study material · " + sourceTitle;
+  reading.href = sourceUrl;
+  let tip = $("studyTip");
+  if (!tip) {
+    tip = document.createElement("p");
+    tip.id = "studyTip";
+    tip.className = "small";
+    reading.after(tip);
+  }
+  tip.textContent = studyTip;
   $("exercise").textContent = task;
   $("deliverable").textContent = proof;
   $("recall").textContent = recall;
@@ -190,6 +232,7 @@ $("matrix").append(matrix);
   const item = document.createElement("li");
   const link = document.createElement("a");
   [link.textContent, link.href] = sources[k];
+  if (["harvard","mit","coursera","ibm"].includes(k)) link.textContent += " (syllabus reference)";
   item.append(link); $("sourceList").append(item);
 });
 show(Math.max(0, firstOpen()), false);
