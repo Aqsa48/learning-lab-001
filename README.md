@@ -1,4 +1,5 @@
 # Learning Lab 001
+live at : http://aqsabrohi.me/learning-lab-001/
 
 Aqsa Umar’s 28-day independent project explores whether AI-assisted questioning helps her recall and apply what she learns. It includes a daily roadmap, a storyboard journal and the manual ExplainBack prototype.
 
