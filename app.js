@@ -19,12 +19,12 @@ const sources = {
 };
 const freeStudy = [
   ["retrieval","Start with the video or poster. Then close it and try the recall exercise."],
-  ["hfagents","Read What are Tools?, Messages and Special Tokens, and the Thought–Action–Observation Cycle."],
-  ["react","Read Responding to events and Updating the screen. Then try saving one form value."],
-  ["retrieval","Use the bookmark prompts to prepare the retest. Review them after you finish answering."],
-  ["pages","Use the branch deployment steps when your draft and demo are ready."],
-  ["mdn","Read the localStorage section. Save, reload and inspect a fictional entry."],
-  ["retrieval","Use the prompt examples to write questions that require recall or a new example."],
+  ["hfagents","Use the three linked Day 01 concepts to prepare the questions and scoring notes before studying."],
+  ["hfagents","Study only the sections assigned to your three concepts. Keep the assessment questions closed during study."],
+  ["react","Read Responding to events and Updating the screen. Build and check one form value at a time."],
+  ["retrieval","Complete the delayed assessment from memory before reopening any study source."],
+  ["pages","Use the README and setup steps as a reproducibility check for your tutorial draft."],
+  ["mdn","Read the localStorage section. Save, reopen and export two fictional entries."],
   ["cs50","Use the lecture or notes. Focus on language models, prompting and hallucinations."],
   ["hfllm","Open Inference with LLMs and Bias and limitations from the chapter menu."],
   ["ollama","Follow the local setup. Choose a local model to avoid cloud usage charges."],
@@ -57,7 +57,20 @@ const themes = [
 ];
 const weeks = ["Experiment and prototype", "Models and local AI", "Retrieval and agents", "Evaluate and publish"];
 const checks = {learn:"Answer the recall question",build:"Run the exercise",proof:"Verify the result and record evidence"};
-const noteNames = {learning:"What I learned",evidence:"Evidence and next step",scene:"Scene and visual",voiceover:"Voiceover and duration"};
+const noteNames = {
+  tried: "What I tried to do",
+  happened: "What happened, including errors or confusion",
+  changed: "What I changed",
+  learning: "What I learned",
+  evidence: "Evidence and next step",
+  baseline: "Day 01 concepts and prior knowledge",
+  question: "Tutorial question",
+  source: "Tutorial source",
+  build: "Small build and what worked or did not",
+  readerExercise: "Reader exercise",
+  scene: "Scene and visual",
+  voiceover: "Voiceover and duration"
+};
 const $ = id => document.getElementById(id);
 const key = "learning-lab-001-v2";
 let records = {};
@@ -110,6 +123,7 @@ function show(i, focus = true) {
   const [title, , concept, task, proof, recall, shot] = lessons[i];
   $("dayLabel").textContent = "WEEK " + (Math.floor(i / 7) + 1) + " / DAY " + label(i);
   $("dayTitle").textContent = title;
+  $("dayOnePlan").hidden = i !== 0;
   $("concept").textContent = concept;
   const [freeSource, studyTip] = freeStudy[i];
   const [sourceTitle, sourceUrl] = sources[freeSource];

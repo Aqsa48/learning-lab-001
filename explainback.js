@@ -5,6 +5,17 @@ const block = document.getElementById("recallBlock");
 const recallButton = document.getElementById("recallButton");
 const key = "learning-lab-explainback-v1";
 const fields = ["concept", "explanation", "example", "limits"];
+const tutorialFields = {
+  question: "Question",
+  source: "Source",
+  attempt: "Small build I tried",
+  outcome: "Test or failure",
+  changes: "What I changed",
+  evidence: "Evidence",
+  learned: "What I learned",
+  next: "What I would try next",
+  readerExercise: "Reader exercise"
+};
 let sessions = [];
 try {
   sessions = JSON.parse(localStorage.getItem(key) || "[]");
@@ -27,6 +38,9 @@ function render() {
     const text = document.createElement("p");
     text.style.whiteSpace = "pre-wrap";
     text.textContent = "Explanation\n" + session.explanation + "\n\nExample\n" + session.example + "\n\nLimits\n" + session.limits;
+    Object.entries(tutorialFields).forEach(([name, label]) => {
+      if (session[name]) text.textContent += "\n\n" + label + "\n" + session[name];
+    });
     const button = document.createElement("button");
     button.className = "secondary";
     button.textContent = "Export this session";
@@ -60,7 +74,10 @@ form.onsubmit = event => {
     message.textContent = "Fill in each field before saving.";
     return;
   }
-  const updated = [{...values, savedAt:new Date().toISOString()}, ...sessions];
+  const tutorial = Object.fromEntries(
+    Object.keys(tutorialFields).map(name => [name, form.elements[name].value.trim()])
+  );
+  const updated = [{...values, ...tutorial, savedAt:new Date().toISOString()}, ...sessions];
   try {
     localStorage.setItem(key, JSON.stringify(updated));
   } catch {

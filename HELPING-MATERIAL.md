@@ -1,12 +1,26 @@
-# ExplainBack five-day companion
+# ExplainBack first-week companion
 
 ## Day 01 · Read and design
 
-Read [Retrieval Practice](https://www.learningscientists.org/retrieval-practice), then close it. Write 150–200 words on a time an explanation felt clear and what you could recall later. Choose three similarly difficult concepts from [Hugging Face Agents Unit 1](https://huggingface.co/learn/agents-course/en/unit1/introduction). Rate prior knowledge from 0 (new) to 2 (could explain). Randomly assign one concept to each method.
+Allow 40–55 minutes. Read [Retrieval Practice](https://www.learningscientists.org/retrieval-practice) for 10 minutes, close it, and write 150–200 words without AI in 15–20 minutes. Explain the difference between receiving an explanation and demonstrating understanding.
+
+Spend 10–15 minutes choosing these three related Unit 1 concepts. Use the headings and introductions today, then study more deeply on Day 03.
+
+- [What is an AI agent?](https://huggingface.co/learn/agents-course/en/unit1/what-are-agents)
+- [What is a tool, and why might an agent use one?](https://huggingface.co/learn/agents-course/en/unit1/tools)
+- [The Thought–Action–Observation cycle](https://huggingface.co/learn/agents-course/en/unit1/agent-steps-and-structure)
+
+In the remaining 5–10 minutes, record prior knowledge for each using 0 for new, 1 for familiar but hard to explain, or 2 for able to explain with an example. Save the reflection and three ratings.
+
+## Day 02 · Prepare the pilot
+
+Randomly assign one concept to each method. Write the question bank, reference answers and rubric before running the study sessions. Add the plan to your work log and write a short README about the question you are testing.
 
 For each concept, write three questions: What is it? What is an example? What happens if it is used incorrectly? Prepare reference answers. Score each response 0 for blank or wrong, 1 for partial, and 2 for accurate and complete.
 
-## Day 02 · Run the immediate test
+This is a personal learning pilot. Assigning different concepts to different methods means difficulty may affect scores. Prior knowledge and order may also matter. Use actual observations to plan another test.
+
+## Day 03 · Run the immediate test
 
 Spend 15 minutes per concept. For A, read. For B, ask AI for an explanation. For C, give AI this prompt:
 
@@ -14,11 +28,13 @@ Spend 15 minutes per concept. For A, read. For B, ask AI for an explanation. For
 
 Close the materials. Answer the nine questions from memory. Record the scores and finish time. Sketch the ExplainBack flow from concept to export.
 
-## Day 03 · Build the manual prototype
+## Day 04 · Build the manual prototype
 
 Practise with [React Quick Start](https://react.dev/learn) and [MDN localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage). Save one explanation and recover it after refreshing before adding the full form. In the full flow, write an explanation before seeing two recall questions, save the session, reopen it and export it. Try the included ExplainBack page for an example.
 
-## Day 04 · Retest
+Use a fictional or unrelated concept during the waiting period. Record what you tried, what happened, what you changed and evidence of what worked or did not.
+
+## Day 05 · Retest
 
 Immediate test finished: ____  
 Retest started (at least 48 hours later): ____
@@ -34,9 +50,9 @@ Answer the same nine questions without reviewing. Score with the same rubric.
 What did I observe? ____  
 What else might explain it? ____
 
-## Day 05 · Write and demonstrate
+## Day 06 · Write and demonstrate
 
-Use the newsletter sequence: question, setup, attempt, evidence, interpretation, next action. Include one actual result, one failure or limitation, and one follow-up experiment. Rehearse a short demo using a fictional session.
+Show real projects being built, including the bugs, in small pieces a beginner can follow. Use question → source → explanation in my words → small build → test or failure → what I learned → reader exercise. Include actual evidence, what worked or did not, and one follow-up. Rehearse a short demo using a fictional session.
 
 | Scene | What viewers see | What I say | Asset or evidence | Seconds |
 |---|---|---|---|---:|
@@ -45,3 +61,7 @@ Use the newsletter sequence: question, setup, attempt, evidence, interpretation,
 | Results | | | | |
 | ExplainBack demo | | | | |
 | Next action | | | | |
+
+## Day 07 · Verify the workflow
+
+Save two fictional sessions, reopen them and export both. Try a blank concept and record the result. Write two manual follow-up questions as a baseline for week two.

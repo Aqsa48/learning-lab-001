@@ -3,8 +3,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ExplainBack · Learning Lab 001</title>
-<link rel="stylesheet" href="style.css">
-<header class="top"><strong>LEARNING LAB / 001</strong><nav><a href="index.html#roadmap">Back to the roadmap</a></nav></header>
+<script src="theme.js"></script>
+<link rel="stylesheet" href="style.css?v=theme-1">
+<header class="top"><strong>LEARNING LAB / 001</strong><nav><a href="index.html#roadmap">Back to the roadmap</a></nav><button id="themeToggle" type="button" aria-label="Dark mode" aria-pressed="false">Dark mode</button></header>
 <main>
 <section class="hero"><div><p class="eyebrow">THE WORKING PROTOTYPE</p><h1>ExplainBack</h1><p class="intro">Pick an idea, explain it from memory, then see if you can apply it. Save the record and return to it later.</p></div></section>
 <article>
@@ -19,6 +20,20 @@
 <label>What is a concrete example?<textarea name="example" disabled required></textarea></label>
 <label>When would this idea fail or be misapplied?<textarea name="limits" disabled required></textarea></label>
 </div>
+<details><summary>Build notes for a future tutorial · optional</summary>
+<p>Question → source → explanation in my words → small build → test or failure → what I learned → reader exercise. Your explanation and recall answers above stay part of the saved record.</p>
+<div class="notes">
+<label>Question<textarea name="question" placeholder="What was I trying to understand?"></textarea></label>
+<label>Source<textarea name="source" placeholder="Title, link and section"></textarea></label>
+<label>Small build I tried<textarea name="attempt" placeholder="One feature, change or exercise"></textarea></label>
+<label>Test or failure<textarea name="outcome" placeholder="What happened? Include the error or confusion and what worked or did not."></textarea></label>
+<label>What I changed<textarea name="changes" placeholder="What did I change after testing?"></textarea></label>
+<label>Evidence<textarea name="evidence" placeholder="Screenshot filename, score or a working feature I checked"></textarea></label>
+<label>What I learned<textarea name="learned" placeholder="My interpretation in my own words"></textarea></label>
+<label>What I would try next<textarea name="next" placeholder="One small follow-up"></textarea></label>
+<label>Reader exercise<textarea name="readerExercise" placeholder="Inputs, a small action and a way to check it"></textarea></label>
+</div>
+</details>
 <button type="submit">Save session</button>
 </div>
 </form>

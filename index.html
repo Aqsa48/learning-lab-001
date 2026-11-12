@@ -3,20 +3,36 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Learning Lab 001 · Aqsa Umar</title>
-<link rel="stylesheet" href="style.css">
-<header class="top"><strong>LEARNING LAB / 001</strong><nav><a href="#roadmap">Roadmap</a> <a href="explainback.html">ExplainBack</a> <a href="#sources">How the roadmap was chosen</a></nav></header>
+<script src="theme.js"></script>
+<link rel="stylesheet" href="style.css?v=theme-1">
+<header class="top"><strong>LEARNING LAB / 001</strong><nav><a href="#roadmap">Roadmap</a> <a href="explainback.html">ExplainBack</a> <a href="#sources">How the roadmap was chosen</a></nav><button id="themeToggle" type="button" aria-label="Dark mode" aria-pressed="false">Dark mode</button></header>
 <main>
 <section class="hero">
 <div><p class="eyebrow">AQSA UMAR · INDEPENDENT PROJECT</p>
 <h1>Can AI help us learn?</h1>
-<p class="intro">Compare three ways to study, build a tool that asks you to explain what you know, and turn your observations into an article and a short video.</p>
-<button id="resume">Start Day 01</button> <a href="HELPING-MATERIAL.md">Five-day companion worksheet</a></div>
+<p class="intro">I am comparing ways to study and building ExplainBack as I learn. I will share the working steps, bugs and evidence in tutorials that students, early-career researchers and beginner developers can follow.</p>
+<button id="resume">Start Day 01</button> <a href="HELPING-MATERIAL.md">First-week companion worksheet</a></div>
 <aside><p class="eyebrow">YOUR PROGRESS</p><strong id="count">0 / 28 days</strong><progress id="progress" max="28" value="0"></progress><p>Plan for 30–60 minutes per day. Set aside extra time for the experiment and the prototype.</p></aside>
 </section>
 <section id="roadmap" class="workspace">
 <aside class="rail"><h2>28-day roadmap</h2><div id="days"></div></aside>
 <article id="lesson" tabindex="-1">
 <p class="eyebrow" id="dayLabel"></p><h2 id="dayTitle"></h2>
+<section id="dayOnePlan" hidden aria-label="Day 1 session plan">
+<p class="eyebrow">YOUR NEXT ACTION · 40–55 MINUTES</p>
+<ol>
+<li><strong>Read for 10 minutes.</strong> Open the retrieval practice guide below and choose its poster or short introduction.</li>
+<li><strong>Close it and write for 15–20 minutes.</strong> Without AI, write 150–200 words on the difference between receiving an explanation and demonstrating understanding. Use the What I learned box below.</li>
+<li><strong>Choose these related concepts in 10–15 minutes.</strong> Briefly look at their headings and introductions. Save deeper study for Day 03.
+<ul>
+<li><a href="https://huggingface.co/learn/agents-course/en/unit1/what-are-agents" target="_blank" rel="noopener">What is an AI agent?</a></li>
+<li><a href="https://huggingface.co/learn/agents-course/en/unit1/tools" target="_blank" rel="noopener">What is a tool, and why might an agent use one?</a></li>
+<li><a href="https://huggingface.co/learn/agents-course/en/unit1/agent-steps-and-structure" target="_blank" rel="noopener">The Thought–Action–Observation cycle</a></li>
+</ul></li>
+<li><strong>Record your starting point in 5–10 minutes.</strong> Rate each concept using 0 for new, 1 for familiar but hard to explain, or 2 for able to explain with an example. Save the ratings and a short note in the Day 01 box below.</li>
+</ol>
+<p>Stop after the reflection and three ratings. Day 02 prepares the question bank, study assignments and README.</p>
+</section>
 <h3>01 · Learn</h3><p id="concept"></p><h4>Free resource for this day</h4><a id="reading" target="_blank" rel="noopener"></a>
 <h3>02 · Build or test</h3><p id="exercise"></p>
 <h3>03 · Check your work</h3><p id="deliverable"></p><p id="recall"></p>
@@ -27,13 +43,28 @@
 </div>
 <button id="finish">Mark day complete</button><p id="feedback" role="status"></p>
 <hr>
-<h3>Daily notes and video storyboard</h3><p id="shot"></p>
+<h3>Build notes and tutorial storyboard</h3>
+<p>Show real projects being built, including the bugs, in small pieces a beginner can follow. Start with a short note about what you actually tried.</p>
+<p id="shot"></p>
 <div class="notes">
+<label>What I tried to do<textarea data-note="tried" placeholder="What was the next small step?"></textarea></label>
+<label>What happened<textarea data-note="happened" placeholder="What did I see? Include errors, confusion or an unexpected result."></textarea></label>
+<label>What I changed<textarea data-note="changed" placeholder="What did I change, and why? Leave this blank if I have not tried a change yet."></textarea></label>
+<label>Day 01 concepts and prior knowledge<textarea data-note="baseline" placeholder="AI agent — /2&#10;Tool — /2&#10;Thought–Action–Observation — /2&#10;What I already know about each"></textarea></label>
 <label>What I learned<textarea data-note="learning" placeholder="Explain the idea from memory."></textarea></label>
 <label>Evidence and next step<textarea data-note="evidence" placeholder="Add a result, screenshot filename or commit link. What will you change?"></textarea></label>
+</div>
+<details><summary>Turn this attempt into a tutorial · optional</summary>
+<p>Question → source → explanation in my words → small build → test or failure → what I learned → reader exercise. Use the notes above for the explanation, test and learning.</p>
+<div class="notes">
+<label>Tutorial question<textarea data-note="question" placeholder="What small question does this attempt answer?"></textarea></label>
+<label>Source<textarea data-note="source" placeholder="Title, link and the section I used"></textarea></label>
+<label>Small build and what worked or did not<textarea data-note="build" placeholder="Show one step, its input, result and remaining problem."></textarea></label>
+<label>Reader exercise<textarea data-note="readerExercise" placeholder="What can a beginner try with a clear input and way to check the result?"></textarea></label>
 <label>Scene and visual<textarea data-note="scene" placeholder="Opening, setup, result, demo or next step. What appears on screen?"></textarea></label>
 <label>Voiceover and duration<textarea data-note="voiceover" placeholder="What will I say? How many seconds will this shot take?"></textarea></label>
 </div>
+</details>
 <div class="controls"><button id="prev" class="secondary">Previous day</button><button id="next" class="secondary">Next day</button><button id="export" class="secondary">Export all notes</button></div>
 <p class="small">Progress and drafts are saved in this browser. Export a Markdown copy before switching devices or clearing browser data.</p><p role="status" id="storageError"></p>
 </article></section>
@@ -43,6 +74,7 @@
 <p>This is one comparison for the whole roadmap. The counts stay the same when you select a different day. Some of these programs sell courses or certificates. The links here show what the programs cover.</p>
 <div id="matrix"></div><ul id="sourceList"></ul>
 </details>
+<p>This is a personal learning pilot. Each A/B/C method uses a different concept, so concept difficulty, prior knowledge and order may affect scores. Describe the actual observations and alternative explanations when choosing a follow-up test.</p>
 <p>Project references include the Learning Lab 001 project plan, the LaTeX guide and the newsletter frameworks. The final article follows the experiment structure: question, setup, attempt, evidence, interpretation and next action.</p></section>
 </main>
 <dialog id="missing"><form method="dialog"><h2>Some work is still open</h2><p id="missingText"></p><div class="controls"><button value="review" id="review">Review missing work</button><button value="continue" class="secondary" id="keep">Continue anyway</button></div></form></dialog>
